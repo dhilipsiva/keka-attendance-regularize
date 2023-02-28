@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "keka-attendance-regularize"
+version = "0.1.0"
+description = "Just a RobotFramework script to regularize attendance in Keka - The HR payroll Software"
+authors = ["dhilipsiva <dhilipsiva@pm.me>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "keka_attendance_regularize"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
