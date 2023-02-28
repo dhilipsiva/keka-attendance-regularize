@@ -9,6 +9,7 @@ packages = [{include = "keka_attendance_regularize"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+robotframework-seleniumlibrary = "^6.0.0"
 
 
 [build-system]
