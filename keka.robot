@@ -31,14 +31,14 @@ Regularize Attendance In Keka
     Login Into Keka
     Goto Attendance Page
     Regularize For Every Single Day
-	
+
 
 *** Keywords ***
 
 Wait Until Spinner Stops
     Wait Until Page Does Not Contain Element    ${LOADER}
     Wait Until Page Does Not Contain Element    ${SPINNER}
-	Sleep    1s
+    Sleep    1s
 
 Login Into Keka
     Open Browser    ${KEKA_DOMAIN}
@@ -69,12 +69,12 @@ Regularize Attendance
     Input Text    ${TIME_INPUT_IN}    ${KEKA_TIME_IN}
     Input Text    ${TIME_INPUT_OUT}    ${KEKA_TIME_OUT}
     Input Text    ${NOTE_INPUT}    ${KEKA_NOTE}
-	Click Button    ${REQUEST_BUTTON}
+    Click Button    ${REQUEST_BUTTON}
     Wait Until Spinner Stops
     Capture Page Screenshot
 
 Keka Setup
-	Set Selenium Timeout    30s
+    Set Selenium Timeout    30s
 
 Keka TearDown
     Close All Browsers
