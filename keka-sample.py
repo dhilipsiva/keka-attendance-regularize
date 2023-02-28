@@ -1,0 +1,6 @@
+KEKA_DOMAIN = "https://my-company.keka.com/"
+KEKA_EMAIL = "user@my-company.com"
+KEKA_PASSWORD = "my-password"
+KEKA_TIME_IN = "10:00"
+KEKA_TIME_OUT = "18:00"
+KEKA_NOTE = "Forgot to mark attendance. Requesting regularization."

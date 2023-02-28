@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# KEKA Credentials 
+keka.py
+
+log.html
+output.xml
+report.html
