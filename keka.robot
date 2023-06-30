@@ -13,10 +13,10 @@ ${FIELD_EMAIL}=            id:email
 ${FIELD_PASSWORD}=         id:password
 ${LOADER}=                 id:loader
 ${SPINNER}=                id:spinner
-${REGULARIZE_DROPDOWN}=    class:ic-options
+${REGULARIZE_DROPDOWN}=    xpath://span[@tooltip="Absent"]
 ${LOGIN_BUTTON}=           xpath:/html/body/div/div[2]/div[1]/div[2]/form/div/button
 ${NAVBAR_ME}=              xpath://*[@id="accordion"]/li[2]/a/span[2]
-${ATTENDANCE_TAB}=         xpath:/html/body/xhr-app-root/div/employee-me/div/ul/li[2]/a
+${ATTENDANCE_TAB}=         xpath://*[@id="preload"]/xhr-app-root/div/employee-me/div/ul/li[2]/a
 ${REGULARIZE_BUTTON}=      xpath://a[contains(text(), "Regularize")]
 ${REQUEST_BUTTON}=         xpath://button[contains(text(), "Request")]
 ${ADD_LOG_BUTTON}=         xpath://button[contains(text(), "+Add Log")]
@@ -29,6 +29,7 @@ ${NOTE_INPUT}=             xpath://textarea[@formcontrolname="note"]
 
 Regularize Attendance In Keka
     Login Into Keka
+    Run Keyword And Continue On Failure    Wait and check if captcha is requested
     Goto Attendance Page
     Regularize For Every Single Day
 
@@ -40,8 +41,13 @@ Wait Until Spinner Stops
     Wait Until Page Does Not Contain Element    ${SPINNER}
     Sleep    1s
 
+Wait and check if captcha is requested
+    Sleep    30s
+    Input Password    ${FIELD_PASSWORD}    ${KEKA_PASSWORD}
+    Click Button    ${LOGIN_BUTTON}
+
 Login Into Keka
-    Open Browser    ${KEKA_DOMAIN}
+    Open Browser    ${KEKA_DOMAIN}    browser=googlechrome
     Wait Until Spinner Stops
     Input Text    ${FIELD_EMAIL}    ${KEKA_EMAIL}
     Input Password    ${FIELD_PASSWORD}    ${KEKA_PASSWORD}
