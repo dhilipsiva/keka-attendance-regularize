@@ -24,7 +24,6 @@ ${TIME_INPUT_IN}=          xpath://input[@formcontrolname="inTimestamp"]
 ${TIME_INPUT_OUT}=         xpath://input[@formcontrolname="outTimestamp"]
 ${NOTE_INPUT}=             xpath://textarea[@formcontrolname="note"]
 
- 
 *** Tasks ***
 
 Regularize Attendance In Keka
@@ -42,9 +41,9 @@ Wait Until Spinner Stops
     Sleep    1s
 
 Wait and check if captcha is requested
-    Sleep    30s
+    # Sleep    30s
     Input Password    ${FIELD_PASSWORD}    ${KEKA_PASSWORD}
-    Click Button    ${LOGIN_BUTTON}
+    # Click Button    ${LOGIN_BUTTON}
 
 Login Into Keka
     Open Browser    ${KEKA_DOMAIN}    browser=googlechrome
@@ -54,6 +53,7 @@ Login Into Keka
     Click Button    ${LOGIN_BUTTON}
 
 Goto Attendance Page
+    Wait Until Page Contains Element    ${NAVBAR_ME}    timeout=60s
     Wait Until Spinner Stops
     Click Element    ${NAVBAR_ME}
     Wait Until Spinner Stops
